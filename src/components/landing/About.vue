@@ -1,5 +1,5 @@
 <template>
-    <div class="w-[1280px] my-12 flex justify-between m-auto items-center">
+    <div class="w-[1280px] my-12 flex justify-between m-auto items-center px-8">
         <div class="w-1/2">
             <h1 class="text-5xl mb-4 font-bold text-gray-900">О стоматологии</h1>
             <p class="text-xl text-gray-500">Каждый день мы совершенствуем процесс лечение и профилактики в стоматологии. ​Создаём выгодные условия

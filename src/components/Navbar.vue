@@ -29,35 +29,38 @@
             </button>
           </router-link>
         </div>
-        <button
-          data-collapse-toggle="navbar-sticky"
-          type="button"
-          class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="navbar-sticky"
-          aria-expanded="false"
-          v-if="user"
-        >
-          <span class="sr-only">Open main menu</span>
-          <svg
-            class="w-6 h-6"
-            aria-hidden="true"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
       </div>
+
+      <button
+        v-if="user"
+        @click="handleClickBurger"
+        data-collapse-toggle="navbar-sticky"
+        type="button"
+        class="order-2 inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-sticky"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="w-6 h-6"
+          aria-hidden="true"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
 
       <div
         v-if="user"
-        class="items-center justify-between hidden w-full md:flex md:w-auto"
-        id="navbar-sticky"
+        :class="`${
+          isMenuOpen ? 'visible' : 'hidden'
+        } items-center justify-between w-full md:flex sm:w-auto order-5`"
       >
         <ul
           class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
@@ -99,6 +102,7 @@ export default {
   name: "Navbar",
   data() {
     return {
+      isMenuOpen: false,
       menuItems: [
         {
           name: "Главная",
@@ -142,6 +146,11 @@ export default {
     handleClickMenu(index) {
       setLocalStorage("active-menu", index);
       this.$store.commit("user/setActiveMenu", index);
+      this.isMenuOpen = falseg;
+    },
+    handleClickBurger() {
+      this.isMenuOpen = !this.isMenuOpen;
+      console.log(this.isMenuOpen);
     },
   },
 };
