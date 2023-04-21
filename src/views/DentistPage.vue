@@ -163,7 +163,7 @@ export default {
     async sign() {
       this.applyLoading = true;
       let response = await axiosInstance.post("/sign/signToExistingDate", {
-        id: this.signDateIndex,
+        id: this.availableDates[this.signDateIndex].id,
       });
       this.applyLoading = false;
       console.log(response.data);
