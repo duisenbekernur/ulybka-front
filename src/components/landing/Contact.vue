@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-700 w-[1280px]">
+  <div class="bg-gray-700 mx-auto w-[1280px]">
     <div class="w-[1280px] m-auto px-8 text-white py-16 flex items-center justify-between">
       <div class="w-1/2">
         <h1 class="text-5xl font-medium mb-8">Контакты стоматологии</h1>
