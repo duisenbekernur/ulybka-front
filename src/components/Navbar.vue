@@ -59,8 +59,8 @@
       <div
         v-if="user"
         :class="`${
-          isMenuOpen ? 'visible' : 'hidden'
-        } items-center justify-between w-full md:flex sm:w-auto order-5`"
+          isMenuOpen ? 'visible  order-5' : 'hidden'
+        } items-center justify-between w-full md:flex sm:w-auto`"
       >
         <ul
           class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
@@ -146,7 +146,7 @@ export default {
     handleClickMenu(index) {
       setLocalStorage("active-menu", index);
       this.$store.commit("user/setActiveMenu", index);
-      this.isMenuOpen = falseg;
+      this.isMenuOpen = false;
     },
     handleClickBurger() {
       this.isMenuOpen = !this.isMenuOpen;
