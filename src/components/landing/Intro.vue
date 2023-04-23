@@ -18,13 +18,20 @@
           </p>
         </div>
         <div>
-          <el-input size="large" class="mb-4" placeholder="Имя" />
-          <el-input size="large" class="mb-2" placeholder="Номер телефона" />
+          <el-input v-model="signDatas.description" size="large" class="mb-4" placeholder="Имя" />
+          <el-input
+            v-model="signDatas.phone"
+            size="large"
+            class="mb-2"
+            placeholder="Номер телефона"
+          />
           <p class="text-sm leading-5 text-gray-400 mb-6 text-left">
             телефон должен начинаться с 8
           </p>
         </div>
-        <el-button type="primary" size="large" class=""> Узнать стоимость </el-button>
+        <el-button v-loading="loading" @click="sign" type="primary" size="large" class="">
+          Записаться
+        </el-button>
       </el-form>
       <img
         class="absolute w-3/12 md:w-4/12 left-8 -bottom-32 rounded-full"
@@ -50,8 +57,30 @@
 </template>
 
 <script>
+import {axiosInstance} from "@/axios";
+
 export default {
   name: "Intro",
+  data() {
+    return {
+      loading: false,
+      signDatas: {
+        phone: "",
+        description: "",
+      },
+    };
+  },
+  methods: {
+    async sign() {
+      this.loading = true;
+      let response = await axiosInstance.post("/sign/signByPhone", {
+        phone: "",
+        description: "",
+      });
+      this.loading = false;
+      this.$toast.success("Успешно!");
+    },
+  },
 };
 </script>
 

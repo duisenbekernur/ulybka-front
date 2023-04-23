@@ -117,7 +117,7 @@ export default {
           path: "/discount",
         },
         {
-          name: "Услуги",
+          name: "Сервисы",
           path: "/services",
         },
         {

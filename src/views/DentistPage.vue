@@ -168,6 +168,7 @@ export default {
       this.applyLoading = false;
       console.log(response.data);
       this.openModal = false;
+      this.$toast.success("Успешно!");
     },
   },
 };
