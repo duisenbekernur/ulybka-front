@@ -4,7 +4,7 @@
 
     <div class="flex w-full flex-wrap gap-8">
       <div
-        v-for="(dentist, index) in dentists"
+        v-for="(dentist, index) in dentists.slice(0, 6)"
         :key="index"
         class="w-[31%] bg-blue-100 rounded-xl p-8 relative cursor-pointer hover:scale-105 transition"
         @click="$router.push({ name: 'dentist_id', params: { id: dentist.id } })"

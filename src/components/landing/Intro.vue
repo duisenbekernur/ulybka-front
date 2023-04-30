@@ -34,7 +34,7 @@
         </el-button>
       </el-form>
       <img
-        class="absolute w-3/12 md:w-4/12 left-8 -bottom-32 rounded-full"
+        class="absolute w-3/12 md:w-3/12 left-8 -bottom-32 rounded-full"
         src="../../assets/intro-man.jpg"
         alt="man"
       />

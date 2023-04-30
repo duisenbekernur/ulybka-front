@@ -216,7 +216,6 @@ export default {
           this.$store.commit("user/login", response.data);
         } else {
           const response = await axiosInstance.post("/auth/registration", this.authDatas);
-          console.log(response.data);
         }
 
         localStorage.setItem("active-menu", JSON.stringify(-1));

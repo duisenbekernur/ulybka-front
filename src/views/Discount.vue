@@ -9,7 +9,11 @@
       Действующие сервисы <span class="text-rose-500 uppercase">со скидками</span>
     </h1>
 
-    <div v-loading="loadingServices" class="flex flex-wrap justify-center gap-2">
+    <div
+      v-if="services.length > 0"
+      v-loading="loadingServices"
+      class="flex flex-wrap justify-center gap-2"
+    >
       <div
         v-for="(service, index) in services"
         :key="index"
@@ -36,6 +40,9 @@
           >
         </div>
       </div>
+    </div>
+    <div v-else>
+      <h1 class="text-center text-rose-500 text-3xl font-medium mb-8">Нету активных сервисов</h1>
     </div>
 
     <el-dialog v-model="openModal" title="Выберите дату" width="25%" :before-close="handleClose">
