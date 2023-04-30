@@ -10,7 +10,7 @@
       <div
         v-for="(blog, index) in blogs"
         :key="index"
-        class="max-w-md min-w-[400px] p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        class="w-[400px] p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
       >
         <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
           <router-link :to="{ name: 'blog_full', params: { id: blog.id } }">
@@ -28,7 +28,9 @@
             >...читать далее</router-link
           >
         </p>
-        <p v-else>{{ blog.description }}</p>
+        <p class="mb-3 font-normal text-gray-500 dark:text-gray-400" v-else>
+          {{ blog.description }}
+        </p>
 
         <router-link
           :to="{ name: 'dentist_id', params: { id: blog.author_id } }"
