@@ -4,17 +4,17 @@
       <el-breadcrumb-item :to="{ path: '/' }">Главная</el-breadcrumb-item>
       <el-breadcrumb-item :to="{ path: '/dentists' }">Стоматологи</el-breadcrumb-item>
       <el-breadcrumb-item>
-        {{ dentist.dataValues.firstname + " " + dentist.dataValues.lastname }}
+        {{ dentist.firstname + " " + dentist.lastname }}
       </el-breadcrumb-item>
     </el-breadcrumb>
 
     <div v-loading="loading" class="flex justify-around items-center">
       <div class="w-1/2">
         <h1 class="text-3xl font-medium">
-          {{ dentist.dataValues.firstname + " " + dentist.dataValues.lastname }}
+          {{ dentist.firstname + " " + dentist.lastname }}
         </h1>
-        <p class="text-xl mb-4">{{ dentist.dataValues.job }}</p>
-        <span class="text-xl mb-4">{{ dentist.dataValues.description }}</span>
+        <p class="text-xl mb-4">{{ dentist.job }}</p>
+        <span class="text-xl mb-4">{{ dentist.description }}</span>
         <el-button @click="openModal = true" type="warning" size="large" class="w-1/3"
           >Записаться</el-button
         >
@@ -28,9 +28,9 @@
       <h1 class="text-center mt-8 text-4xl font-medium">Образование стоматолога</h1>
 
       <div>
-        <h3 v-for="item in dentist.empCertifications">
-          {{ item }}
-        </h3>
+<!--        <h3 v-for="item in dentist.empCertifications">-->
+<!--          {{ item }}-->
+<!--        </h3>-->
       </div>
     </div>
 
@@ -134,7 +134,7 @@ export default {
     async getDentist() {
       let id = this.$route.params.id;
       let response = await axiosInstance.get(`/emp/getEmployer/${id}`);
-      this.dentist = response.data;
+      this.dentist = response.data.emp;
     },
     handleClose(done) {
       done();
