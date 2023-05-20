@@ -8,7 +8,7 @@
 
     <div v-loading="loading" class="flex flex-wrap gap-4 justify-center">
       <el-card v-for="item in dentists" :body-style="{ padding: '0px' }" class="relative w-80">
-        <img class="w-full h-full" src="../assets/intro-man.jpg" alt="dentist" />
+        <img class="w-[350px] h-[250px]" :src="item.avatar" alt="dentist" />
         <div class="flex justify-between items-center" style="padding: 14px">
           <div class="flex flex-col gap">
             <span class="text-lg font-medium">{{ item.lastname + " " + item.firstname }}</span>

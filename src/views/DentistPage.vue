@@ -20,7 +20,7 @@
         >
       </div>
       <div class="w-1/3 rounded-lg shadow-2xl overflow-hidden">
-        <img src="../assets/intro-man.jpg" alt="dentist" />
+        <img :src="dentist.avatar" class="h-[400px] w-full" alt="dentist" />
       </div>
     </div>
 
