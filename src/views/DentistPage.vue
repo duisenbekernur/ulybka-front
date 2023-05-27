@@ -1,8 +1,8 @@
 <template>
   <div class="w-[1280px] mx-auto mt-28 mb-8">
     <el-breadcrumb separator="/">
-      <el-breadcrumb-item :to="{ path: '/' }">Главная</el-breadcrumb-item>
-      <el-breadcrumb-item :to="{ path: '/dentists' }">Стоматологи</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/' }">Басты</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/dentists' }">Стоматологтар</el-breadcrumb-item>
       <el-breadcrumb-item>
         {{ dentist.firstname + " " + dentist.lastname }}
       </el-breadcrumb-item>
@@ -16,8 +16,8 @@
         <p class="text-xl mb-4">{{ dentist.job }}</p>
         <span class="text-xl mb-4">{{ dentist.description }}</span>
         <el-button @click="openModal = true" type="warning" size="large" class="w-1/3"
-          >Записаться</el-button
-        >
+          >Тіркелу
+        </el-button>
       </div>
       <div class="w-1/3 rounded-lg shadow-2xl overflow-hidden">
         <img :src="dentist.avatar" class="h-[400px] w-full" alt="dentist" />
@@ -25,19 +25,19 @@
     </div>
 
     <div>
-      <h1 class="text-center mt-8 text-4xl font-medium">Образование стоматолога</h1>
+      <h1 class="text-center mt-8 text-4xl font-medium">Стоматологтың білімі</h1>
 
       <div>
-<!--        <h3 v-for="item in dentist.empCertifications">-->
-<!--          {{ item }}-->
-<!--        </h3>-->
+        <!--        <h3 v-for="item in dentist.empCertifications">-->
+        <!--          {{ item }}-->
+        <!--        </h3>-->
       </div>
     </div>
 
-    <el-dialog v-model="openModal" title="Выберите дату" width="25%" :before-close="handleClose">
+    <el-dialog v-model="openModal" title="Күнді таңдаңыз" width="25%" :before-close="handleClose">
       <div class="" v-loading="loadingDate">
         <div>
-          <p class="text-gray-400 mb-1 text-sm">Выберите день</p>
+          <p class="text-gray-400 mb-1 text-sm">Күнді таңдаңыз</p>
           <el-date-picker
             class="w-full mb-4"
             @change="handleChangeDate"
@@ -49,7 +49,7 @@
           />
         </div>
         <div v-if="ok && availableDates.length > 0">
-          <p class="text-gray-400 mb-1 text-sm">Выберите время</p>
+          <p class="text-gray-400 mb-1 text-sm">Уақытты таңдаңыз</p>
           <div class="flex flex-wrap gap-4">
             <div
               v-for="(item, index) in availableDates"
@@ -63,13 +63,13 @@
           </div>
         </div>
         <div v-if="ok && dateValue && availableDates.length === 0">
-          <p class="text-gray-400 mb-1 text-sm">Нет свободныых записей для выбранной даты</p>
+          <p class="text-gray-400 mb-1 text-sm">Таңдалған уақытқа бос орындар табылмады</p>
         </div>
       </div>
       <template #footer>
         <span class="dialog-footer">
-          <el-button @click="openModal = false">Назад</el-button>
-          <el-button type="primary" @click="sign"> Подтвердить </el-button>
+          <el-button @click="openModal = false">Артқа</el-button>
+          <el-button type="primary" @click="sign"> Растау </el-button>
         </span>
       </template>
     </el-dialog>

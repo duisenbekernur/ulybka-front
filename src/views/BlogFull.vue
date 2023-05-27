@@ -1,8 +1,8 @@
 <template>
   <div class="w-[1280px] mx-auto mt-28 mb-8">
     <el-breadcrumb separator="/">
-      <el-breadcrumb-item :to="{ path: '/' }">Главная</el-breadcrumb-item>
-      <el-breadcrumb-item :to="{ path: '/blog' }">Блог</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/' }">Басты</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/blog' }">Блогтар</el-breadcrumb-item>
       <el-breadcrumb-item>
         {{ blog.name }}
       </el-breadcrumb-item>
@@ -12,16 +12,16 @@
       <h1 class="text-center text-3xl font-medium mb-8">{{ blog.name }}</h1>
       <p class="border rounded-lg p-8 bg-neutral-100">{{ blog.description }}</p>
       <div class="mt-4">
-        <p class="font-medium">Написать отзыв</p>
+        <p class="font-medium">Отзыв жазу</p>
         <div class="flex gap-2">
           <el-input v-model="userReview" placeholder="Введите..." class=""></el-input>
           <el-button v-loading="loadingReview" @click="handleSubmitReview" type="primary"
-            >Отправить</el-button
+            >Жіберу</el-button
           >
         </div>
       </div>
       <div class="mt-4" v-loading="loadingReviews">
-        <p class="font-medium">Отзывы</p>
+        <p class="font-medium">Отзывтар</p>
 
         <div v-if="reviews.length > 0" class="flex flex-col gap-2">
           <div

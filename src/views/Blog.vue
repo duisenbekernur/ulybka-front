@@ -1,8 +1,8 @@
 <template>
   <div class="w-[1280px] mx-auto mt-28 mb-8">
     <el-breadcrumb separator="/">
-      <el-breadcrumb-item :to="{ path: '/' }">Главная</el-breadcrumb-item>
-      <el-breadcrumb-item :to="{ path: '/blog' }">Блог</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/' }">Басты бет</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/blog' }">Блогтар</el-breadcrumb-item>
     </el-breadcrumb>
     <h1 class="text-center text-3xl font-medium mb-8">Блог</h1>
 
@@ -32,12 +32,12 @@
           {{ blog.description }}
         </p>
 
-        <router-link
-          :to="{ name: 'dentist_id', params: { id: blog.author_id } }"
-          class="inline-flex items-center text-blue-600 hover:underline"
-        >
-          Автор: {{ blog.author_name }}
-        </router-link>
+        <!--        <router-link-->
+        <!--          :to="{ name: 'dentist_id', params: { id: blog.author_id } }"-->
+        <!--          class="inline-flex items-center text-blue-600 hover:underline"-->
+        <!--        >-->
+        <!--          Автор: {{ blog.author_name }}-->
+        <!--        </router-link>-->
       </div>
     </div>
   </div>

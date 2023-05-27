@@ -1,6 +1,6 @@
 <template>
   <div id="services" class="w-[1280px] text-center my-16 mx-auto px-8">
-    <h1 class="text-5xl font-medium mb-12">Наши услуги</h1>
+    <h1 class="text-5xl font-medium mb-12">Біздің сервистер</h1>
 
     <div class="flex w-full flex-wrap gap-8">
       <div

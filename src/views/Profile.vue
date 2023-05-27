@@ -10,12 +10,12 @@
       <el-button
         type="primary"
         plain
-        class="mt-2 ml-16"
+        class="mt-2 ml-20"
         @click="
           isDrawerOpened = true;
           updateUserValues = user;
         "
-        >Редактировать</el-button
+        >Өңдеу</el-button
       >
 
       <ul class="p-4">
@@ -73,12 +73,12 @@ export default {
       activeItem: 0,
       sideItems: [
         {
-          name: "Основное",
+          name: "Басты",
           component: "Main",
           icon: "mdi:user",
         },
         {
-          name: "История посещения",
+          name: "Тарих",
           component: "History",
           icon: "ic:baseline-history",
         },

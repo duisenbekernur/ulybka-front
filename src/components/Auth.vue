@@ -1,10 +1,12 @@
 <template>
   <section class="bg-neutral-100">
-    <div class="flex flex-col items-center justify-center px-6 py-32  mt-20 mx-auto md:h-screen lg:py-0">
+    <div
+      class="flex flex-col items-center justify-center px-6 py-32 mt-20 mx-auto md:h-screen lg:py-0"
+    >
       <div class="w-full rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 bg-white">
         <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
           <h1 class="text-3xl font-bold leading-tight tracking-tight text-black md:text-4xl">
-            {{ title }}
+            {{ title === "Логин" ? "Кіру" : "Тіркелу" }}
           </h1>
 
           <!-- FORM -->
@@ -17,7 +19,7 @@
           >
             <div v-if="title === 'Регистрация'">
               <!-- firstname -->
-              <label for="firstname" class="block mb-2 text-lg font-medium text-black">Имя</label>
+              <label for="firstname" class="block mb-2 text-lg font-medium text-black">Аты</label>
               <Field
                 v-model="authDatas.firstname"
                 type="text"
@@ -30,9 +32,7 @@
             </div>
             <div v-if="title === 'Регистрация'">
               <!-- lastname -->
-              <label for="lastname" class="block mb-2 text-lg font-medium text-black"
-                >Фамилия</label
-              >
+              <label for="lastname" class="block mb-2 text-lg font-medium text-black">Тегі</label>
               <Field
                 v-model="authDatas.lastname"
                 type="text"
@@ -45,7 +45,7 @@
             </div>
             <div v-if="title === 'Регистрация'">
               <!-- IIN -->
-              <label for="IIN" class="block mb-2 text-lg font-medium text-black">ИИН</label>
+              <label for="IIN" class="block mb-2 text-lg font-medium text-black">ЖСН</label>
               <Field
                 v-model="authDatas.IIN"
                 type="text"
@@ -59,7 +59,7 @@
             <div v-if="title === 'Регистрация'">
               <!-- phone -->
               <label for="email" class="block mb-2 text-lg font-medium text-black"
-                >Номер телефона</label
+                >Телефон номер</label
               >
               <Field
                 v-model="authDatas.phone"
@@ -86,7 +86,9 @@
             </div>
             <div v-if="title === 'Регистрация'">
               <!-- Password -->
-              <label for="password" class="block mb-2 text-lg font-medium text-black">Пароль</label>
+              <label for="password" class="block mb-2 text-lg font-medium text-black"
+                >Құпиясөз</label
+              >
               <Field
                 v-model="authDatas.password"
                 type="password"
@@ -103,7 +105,7 @@
               type="submit"
               class="w-full text-white focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center bg-rose-500 hover:bg-rose-400 transition"
             >
-              {{ title }}
+              Тіркелу
             </button>
           </Form>
           <Form
@@ -116,7 +118,7 @@
             <div>
               <!-- iinlogin -->
               <label for="phonelogin" class="block mb-2 text-lg font-medium text-black"
-                >ИИН пользователя</label
+                >Қолданушы ЖСН-і</label
               >
               <Field
                 v-model="authDatas.IIN"
@@ -131,7 +133,7 @@
             <div>
               <!-- passwordlogin -->
               <label for="passwordlogin" class="block mb-2 text-lg font-medium text-black"
-                >Пароль</label
+                >Құпиясөз</label
               >
               <Field
                 v-model="authDatas.password"
@@ -148,20 +150,20 @@
               type="submit"
               class="w-full text-white focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center bg-rose-500 hover:bg-rose-400 transition"
             >
-              {{ title }}
+              {{ title === "Логин" ? "Кіру" : "Тіркелу" }}
             </button>
           </Form>
           <!-- Change route -->
           <p v-if="title === 'Логин'" class="text-sm font-light text-black">
-            Нету аккаунта?
+            Аккаунт жоқ?
             <router-link :to="backLink" class="font-medium text-primary-600 hover:underline"
-              >Регистрация</router-link
+              >Тіркелу</router-link
             >
           </p>
           <p v-if="title === 'Регистрация'" class="text-sm font-light text-black">
-            Уже есть аккаунт?
+            Аккаунт бар ма?
             <router-link :to="backLink" class="font-medium text-primary-600 hover:underline"
-              >Войти</router-link
+              >Кіру</router-link
             >
           </p>
         </div>

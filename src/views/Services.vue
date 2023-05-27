@@ -1,10 +1,10 @@
 <template>
-  <div class="w-[1280px] mx-auto mt-28 mb-8">
+  <div class="w-[1280px] mx-auto mt-28 mb-8 bg-gray-50">
     <el-breadcrumb separator="/">
-      <el-breadcrumb-item :to="{ path: '/' }">Главная</el-breadcrumb-item>
-      <el-breadcrumb-item :to="{ path: '/services' }">Сервисы</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/' }">Басты бет</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/services' }">Сервистер</el-breadcrumb-item>
     </el-breadcrumb>
-    <h1 class="text-center text-3xl font-medium mb-8">Действующие сервисы</h1>
+    <h1 class="text-center text-3xl font-medium mb-8">Сервистер</h1>
 
     <div
       v-if="withoutDiscount.length > 0"
@@ -28,19 +28,19 @@
               openModal = true;
             "
             type="warning"
-            >Записаться</el-button
+            >Тіркелу</el-button
           >
         </div>
       </div>
     </div>
     <div v-else>
-      <h1 class="text-center text-rose-500 text-3xl font-medium mb-8">Нету активных сервисов</h1>
+      <h1 class="text-center text-rose-500 text-3xl font-medium mb-8">Бос сервистер табылмады</h1>
     </div>
 
     <el-dialog v-model="openModal" title="Выберите дату" width="25%" :before-close="handleClose">
       <div class="" v-loading="loadingDate">
         <div>
-          <p class="text-gray-400 mb-1 text-sm">Выберите день</p>
+          <p class="text-gray-400 mb-1 text-sm">Күн таңдаңыз</p>
           <el-date-picker
             class="w-full mb-4"
             @change="handleChangeDate"
@@ -52,7 +52,7 @@
           />
         </div>
         <div v-if="ok && availableDates.length > 0">
-          <p class="text-gray-400 mb-1 text-sm">Выберите время</p>
+          <p class="text-gray-400 mb-1 text-sm">Уақыт таңдаңыз</p>
           <div class="flex flex-wrap gap-4">
             <div
               v-for="(item, index) in availableDates"
@@ -66,13 +66,13 @@
           </div>
         </div>
         <div v-if="ok && dateValue && availableDates.length === 0">
-          <p class="text-gray-400 mb-1 text-sm">Нет свободныых записей для выбранной даты</p>
+          <p class="text-gray-400 mb-1 text-sm">Таңдалған күнге бос орындар табылмады</p>
         </div>
       </div>
       <template #footer>
         <span class="dialog-footer">
-          <el-button @click="openModal = false">Назад</el-button>
-          <el-button type="primary" @click="sign"> Подтвердить </el-button>
+          <el-button @click="openModal = false">Артқа</el-button>
+          <el-button type="primary" @click="sign"> Растау </el-button>
         </span>
       </template>
     </el-dialog>

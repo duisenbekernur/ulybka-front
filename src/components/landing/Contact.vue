@@ -2,7 +2,7 @@
   <div class="bg-gray-700 mx-auto">
     <div class="w-[1280px] m-auto px-8 text-white py-16 flex items-center justify-between">
       <div class="w-1/2">
-        <h1 class="text-5xl font-medium mb-8">Контакты стоматологии</h1>
+        <h1 class="text-5xl font-medium mb-8">Байланысу</h1>
 
         <div class="flex justify-between w-full">
           <div>
@@ -24,11 +24,11 @@
           </div>
           <div>
             <div class="mb-4">
-              <p class="text-3xl text-gray-400">График работы:</p>
+              <p class="text-3xl text-gray-400">Жұмыс кестесі:</p>
               <h3 class="text-xl">
-                Пн-Сб: 09:00 - 21:00 <br />
-                Вс: 10:00 - 18:00 <br />
-                Запись по телефону да 22:00
+                Дб-Сб: 09:00 - 21:00 <br />
+                Жб: 10:00 - 18:00 <br />
+                Телефон арқылы тіркелу <strong>22:00</strong> дейін
               </h3>
             </div>
           </div>
